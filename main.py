@@ -17,5 +17,6 @@ if __name__ == '__main__':
     print('4')
     print('5')
     print('6')
+    print('7')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
