@@ -44,9 +44,9 @@ def mergeTwoLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optio
     return reslute.next
 
 if __name__ == '__main__':
-    a=ListNode(1,ListNode(2,ListNode(3,ListNode(4))))
-    b=ListNode(1,ListNode(2,ListNode(3,ListNode(4,ListNode(5,ListNode(6))))))
-    print(mergeTwoLists(a,b))
+    list=[]
+    assert_that(1==1)
+
 
 
 

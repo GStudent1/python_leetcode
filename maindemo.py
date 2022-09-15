@@ -1,6 +1,75 @@
 from typing import List
 
 """
+回文数
+"""
+def isPalindrome(x: int) -> bool:
+    listx = list(repr(x))
+    listtemp = listx[:]
+    listtemp.reverse()
+    if listx == listtemp:
+        return True
+    return False
+
+if __name__ == '__main__':
+
+    print(isPalindrome(1))
+"""
+实现 strStr()
+"""
+
+
+def strStr(haystack: str, needle: str) -> int:
+    if needle == "":
+        return 0
+    for i in range(0, len(haystack) - len(needle) + 1):
+        if haystack[i:i + len(needle)] == needle:
+            return i
+    return -1
+
+
+"""
+移除元素
+"""
+
+
+def removeElement(nums: List[int], val: int) -> int:
+    left = 0
+    right = len(nums) - 1
+    while left <= right:
+        if nums[left] == val:
+            if nums[right] == val:
+                right = right - 1
+            else:
+                nums[left] = nums[right]
+                right = right - 1
+                left = left + 1
+        else:
+            left = left + 1
+    return len(nums[0:left])
+
+
+def removeElement1(nums: List[int], val: int) -> int:
+    for i in range(nums.count(val)):
+        str.remove(val)
+    return len(nums)
+
+
+"""
+53. 最大子数组和
+"""
+
+
+def maxSubArray(nums: List[int]) -> int:
+    total = 0
+    for i in range(len(nums)):
+        if total + nums[i] < 0:
+            total = 0
+        else:
+            total = total + nums[i]
+
+
+"""
 删除有序数组中的重复项
 """
 
@@ -9,20 +78,15 @@ def removeDuplicates(nums: List[int]) -> int:
     left = 0
     right = 0
     for i in range(len(nums)):
-        if nums[right]  not in nums[0:left]:
+        if nums[right] not in nums[0:left]:
             nums[left] = nums[right]
             right = right + 1
             left = left + 1
         else:
-            right=right+1
+            right = right + 1
 
     return left
 
-if __name__ == '__main__':
-    str = [1,1,3,3,4,4,5,5,6,7,8,8,9]
-    print(removeDuplicates(str))
-    print(str)
-    #print(removeDuplicates(str))
 
 """
 有效的括号
